@@ -35,3 +35,12 @@ Dữ liệu được cập nhật từ **0h ngày 01/08/2026 đến 16h ngày 05
 
 ## Cập nhật GitHub Pages
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
+
+- Đã tạo lại toàn bộ **Top 3 Nhóm Pro, Plus, Basic** trực tiếp từ sheet `TH`.
+- Top 3 được xếp theo **Doanh thu bán hàng giảm dần**; nếu doanh thu bằng nhau thì ưu tiên **Số lượng thuê bao cao hơn**.
+- Mỗi thẻ chỉ lấy đúng:
+  - `Tên ĐUQ`
+  - `Đơn vị` (Khu vực)
+  - `Số lượng Thuê bao`
+  - `Doanh thu bán hàng`
+- Đã loại bỏ dữ liệu Top 3 cũ bị lưu tĩnh và gây hiển thị sai `113 TB`.
