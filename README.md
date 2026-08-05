@@ -1,20 +1,24 @@
 # Chương trình đồng hành cùng Điểm ủy quyền
 
-Phiên bản dữ liệu cập nhật đến **ngày 05/08/2026**, lấy từ sheet **TH**.
+Dữ liệu từ **0h ngày 01/08/2026 đến 12h ngày 05/08/2026**, lấy từ sheet **TH**.
 
 ## Tổng quan
 - Tổng ĐUQ: **229**
 - Nhóm Pro: **27**
 - Nhóm Plus: **30**
 - Nhóm Basic: **172**
-- Tổng thuê bao: **110**
-- Tổng doanh thu: **14,148,000 đồng**
-- Thuê bao bình quân: **0.48 TB/ĐUQ**
-- Doanh thu bình quân: **61,782 đồng/ĐUQ**
-- Đủ điều kiện: **0**
-- Có mức thưởng: **0**
+- Tổng thuê bao: **362**
+- Tổng doanh thu: **15,548,000 đồng**
+- ĐUQ có PSSL: **97**
+- ĐUQ PSSL có gói từ 70k: **44**
+
+## Chức năng
+- Tìm kiếm toàn bộ ĐUQ.
+- Danh sách riêng theo Pro, Plus, Basic.
+- Danh sách sắp xếp doanh thu từ cao xuống thấp.
+- Dashboard thuê bao, doanh thu, PSSL và PSSL gói từ 70k.
+- Top 3 doanh thu từng nhóm.
+- Popup chi tiết đầy đủ.
 
 ## Cập nhật GitHub Pages
-1. Upload đè `index.html` và `README.md`.
-2. Chọn **Commit changes**.
-3. Chờ GitHub Pages cập nhật khoảng 1–3 phút.
+Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
