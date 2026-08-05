@@ -1,6 +1,6 @@
 # Chương trình đồng hành cùng Điểm ủy quyền
 
-Phiên bản dữ liệu cập nhật đến **16h ngày 04/08/2026**.
+Phiên bản dữ liệu cập nhật đến **16h ngày 05/08/2026**.
 
 ## Nguyên tắc cập nhật
 - Giữ nguyên toàn bộ bố cục, màu sắc, logo VNPT, hình ảnh và chức năng của bảng chốt.
