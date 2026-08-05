@@ -34,3 +34,12 @@ Phiên bản dữ liệu cập nhật đến **16h ngày 04/08/2026**.
 
 ## Cập nhật GitHub Pages
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
+
+- Bổ sung cột **Tổng thuê bao** ngay sau cột **PSSL ≥70k** trong bảng 22 địa bàn.
+- Bổ sung cột **Tổng doanh thu** ngay sau cột **Tổng thuê bao**.
+- **Tổng thuê bao** là tổng số thuê bao của toàn bộ ĐUQ thuộc địa bàn.
+- **Tổng doanh thu** là tổng doanh thu bán hàng của toàn bộ ĐUQ thuộc địa bàn.
+- Có thể bấm vào hai cột mới để mở danh sách ĐUQ chi tiết:
+  - Tổng thuê bao: sắp xếp theo thuê bao từ cao xuống thấp.
+  - Tổng doanh thu: sắp xếp theo doanh thu từ cao xuống thấp.
+- Hai chỉ tiêu mới cũng được bổ sung vào droplist **Xem nhanh theo chỉ tiêu**.
