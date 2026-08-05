@@ -43,3 +43,30 @@ Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
   - Tổng thuê bao: sắp xếp theo thuê bao từ cao xuống thấp.
   - Tổng doanh thu: sắp xếp theo doanh thu từ cao xuống thấp.
 - Hai chỉ tiêu mới cũng được bổ sung vào droplist **Xem nhanh theo chỉ tiêu**.
+
+- Trong danh sách **ĐUQ có PSSL**, **ĐUQ chưa PSSL** và **PSSL gói từ 70k**, bổ sung droplist lọc theo 22 khu vực.
+- Trong bảng **Theo dõi 22 địa bàn**, bổ sung cột cảnh báo **ĐUQ chưa PSSL**.
+- Bấm vào số lượng **ĐUQ chưa PSSL** của một địa bàn sẽ:
+  - Chuyển sang danh sách ĐUQ chưa PSSL.
+  - Tự động chọn đúng khu vực trong droplist.
+  - Hiển thị nhanh danh sách ĐUQ cần hỗ trợ.
+
+- Đã sửa lỗi lệch cột trong bảng 22 địa bàn.
+- Nguyên nhân: phần dữ liệu đã có cột **Chưa PSSL** nhưng tiêu đề bảng chưa có, làm toàn bộ các cột phía sau bị dịch sai.
+- Thứ tự cột chuẩn hiện tại:
+  1. XH
+  2. Địa bàn
+  3. Tổng ĐUQ
+  4. PSSL
+  5. Chưa PSSL
+  6. Tỷ lệ PSSL
+  7. PSSL ≥70k
+  8. Tổng thuê bao
+  9. Tổng doanh thu
+  10. ≥5 SIM
+  11. ≥10 SIM
+  12. ≥20 SIM
+  13. DT <500K
+  14. DT ≥500K
+  15. DT ≥1 triệu
+  16. DT ≥2 triệu

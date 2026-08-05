@@ -47,6 +47,13 @@ main{max-width:1180px;margin:-12px auto 40px;padding:0 11px}.search{display:flex
 .order-phone{font-weight:900;font-size:14px}
 .order-revenue{color:var(--good);font-weight:900;white-space:nowrap}
 .order-empty{padding:16px;text-align:center;color:var(--muted);background:#f7fafc;border-radius:12px}
+
+.list-area-filter{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:10px}
+.list-area-filter label{font-size:13px;font-weight:900;color:var(--p)}
+.list-area-filter select{padding:11px 12px;font-size:14px;background:#fff}
+.warning-cell{color:#c93232!important;font-weight:900;background:#fff1f1!important}
+.warning-cell:hover{background:#ffe2e2!important}
+@media(max-width:560px){.list-area-filter{grid-template-columns:1fr;gap:6px}}
 footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 @media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}.quick{grid-template-columns:repeat(3,1fr)}.area-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:850px){.charts,.leaders,.results,.pssl-grid,.action-grid{grid-template-columns:1fr}}
@@ -214,6 +221,7 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
       <option value="all">Hiển thị toàn bộ chỉ tiêu</option>
       <option value="total">Tổng số ĐUQ</option>
       <option value="pssl">ĐUQ có PSSL</option>
+      <option value="notpssl">ĐUQ chưa PSSL</option>
       <option value="psslRate">Tỷ lệ ĐUQ PSSL</option>
       <option value="pssl70">ĐUQ PSSL gói từ 70k</option>
       <option value="subs">Tổng thuê bao</option>
@@ -261,7 +269,7 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 </div>
 <div class="area-table-wrap"><table>
 <thead id="areaHead"><tr>
-<th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
+<th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Chưa PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
 <th>≥5 SIM</th><th>≥10 SIM</th><th>≥20 SIM</th><th>DT &lt;500K</th><th>DT ≥500K</th><th>DT ≥1tr</th><th>DT ≥2tr</th>
 </tr></thead><tbody id="areaBody"></tbody>
 </table></div>
@@ -270,6 +278,34 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 <section id="listView" class="list-view">
 <div class="list-head"><h2 id="listTitle"></h2><button class="back" id="back">← Quay lại</button></div>
 <input id="groupSearch" placeholder="Tìm trong danh sách này…">
+<div class="list-area-filter" id="listAreaFilterWrap">
+  <label for="listAreaFilter">Lọc theo khu vực</label>
+  <select id="listAreaFilter">
+    <option value="all">Tất cả 22 khu vực</option>
+    <option value="Tân Ninh">Tân Ninh</option>
+<option value="Long An">Long An</option>
+<option value="Tân Biên">Tân Biên</option>
+<option value="Châu Thành">Châu Thành</option>
+<option value="Bến Cầu">Bến Cầu</option>
+<option value="Tân Trụ">Tân Trụ</option>
+<option value="Dương Minh Châu">Dương Minh Châu</option>
+<option value="Thủ Thừa">Thủ Thừa</option>
+<option value="Tân Châu">Tân Châu</option>
+<option value="Đức Huệ">Đức Huệ</option>
+<option value="Cần Đước">Cần Đước</option>
+<option value="Hòa Thành">Hòa Thành</option>
+<option value="Cần Giuộc">Cần Giuộc</option>
+<option value="Tầm Vu">Tầm Vu</option>
+<option value="Kiến Tường">Kiến Tường</option>
+<option value="Đức Hòa">Đức Hòa</option>
+<option value="Tân Thạnh">Tân Thạnh</option>
+<option value="Bến Lức">Bến Lức</option>
+<option value="Thạnh Hóa">Thạnh Hóa</option>
+<option value="Gò Dầu">Gò Dầu</option>
+<option value="Vĩnh Hưng">Vĩnh Hưng</option>
+<option value="Trảng Bàng">Trảng Bàng</option>
+  </select>
+</div>
 <div class="summary-cards">
 <div class="summary-card"><small>Số điểm</small><b id="sumPoints">0</b></div>
 <div class="summary-card"><small>Thuê bao</small><b id="sumSubs">0</b></div>
@@ -304,10 +340,29 @@ function setPage(page){
 }
 function showHome(){mode="home";group=null;areaFilter=null;setPage("home");$("globalSearch").value="";$("groupSearch").value="";window.scrollTo({top:0,behavior:"smooth"})}
 function showAreas(){lastPage="areas";setPage("areas");renderAreas();window.scrollTo({top:0,behavior:"smooth"})}
-function openGroup(g){lastPage="home";mode="group";group=g;areaFilter=null;setPage("list");$("groupSearch").style.display="block";$("listTitle").textContent=g==="pro"?"Danh sách Nhóm Pro":g==="plus"?"Danh sách Nhóm Plus":"Danh sách Nhóm Basic";render();window.scrollTo({top:0,behavior:"smooth"})}
-function openMode(m){lastPage="home";mode=m;group=null;areaFilter=null;setPage("list");$("groupSearch").style.display="block";$("listTitle").textContent=m==="pssl"?"ĐUQ có PSSL":m==="notpssl"?"ĐUQ chưa PSSL":"ĐUQ PSSL có gói từ 70k";$("groupSearch").value="";render();window.scrollTo({top:0,behavior:"smooth"})}
-function searchAll(){const q=norm($("globalSearch").value);if(!q){showHome();return}lastPage="home";mode="search";group=null;areaFilter=null;setPage("list");$("groupSearch").style.display="none";$("listTitle").textContent=`Kết quả tìm kiếm toàn bộ ${DATA.length} ĐUQ`;render()}
-function openAreaMetric(area,key,label){lastPage="areas";mode="area";group=null;areaFilter={area,key};setPage("list");$("groupSearch").style.display="block";$("groupSearch").value="";$("listTitle").textContent=`${area} · ${label}`;render();window.scrollTo({top:0,behavior:"smooth"})}
+function openGroup(g){lastPage="home";mode="group";group=g;areaFilter=null;setPage("list");$("groupSearch").style.display="block";$("listAreaFilterWrap").style.display="grid";$("listTitle").textContent=g==="pro"?"Danh sách Nhóm Pro":g==="plus"?"Danh sách Nhóm Plus":"Danh sách Nhóm Basic";render();window.scrollTo({top:0,behavior:"smooth"})}
+function openMode(m){lastPage="home";mode=m;group=null;areaFilter=null;setPage("list");$("groupSearch").style.display="block";$("listAreaFilterWrap").style.display="grid";$("listTitle").textContent=m==="pssl"?"ĐUQ có PSSL":m==="notpssl"?"ĐUQ chưa PSSL":"ĐUQ PSSL có gói từ 70k";$("groupSearch").value="";if($("listAreaFilter"))$("listAreaFilter").value="all";render();window.scrollTo({top:0,behavior:"smooth"})}
+function searchAll(){const q=norm($("globalSearch").value);if(!q){showHome();return}lastPage="home";mode="search";group=null;areaFilter=null;setPage("list");$("groupSearch").style.display="none";$("listAreaFilterWrap").style.display="none";$("listTitle").textContent=`Kết quả tìm kiếm toàn bộ ${DATA.length} ĐUQ`;render()}
+function openAreaMetric(area,key,label){
+  lastPage="areas";group=null;
+  setPage("list");
+  $("groupSearch").style.display="block";
+  $("listAreaFilterWrap").style.display="grid";
+  $("groupSearch").value="";
+  if(key==="notpssl"){
+    mode="notpssl";
+    areaFilter=null;
+    $("listTitle").textContent="ĐUQ chưa PSSL";
+    if($("listAreaFilter"))$("listAreaFilter").value=area;
+  }else{
+    mode="area";
+    areaFilter={area,key};
+    $("listTitle").textContent=`${area} · ${label}`;
+    if($("listAreaFilter"))$("listAreaFilter").value="all";
+  }
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 function openDetailMode(m,title){
   lastPage=document.getElementById("areaView").style.display==="block"?"areas":"home";
   mode=m;group=null;areaFilter=null;
@@ -349,6 +404,7 @@ function getList(){
       : DATA.filter(r=>r._group===areaFilter.group);
     const k=areaFilter.key;
     if(k==="pssl") list=list.filter(r=>Number(r["ĐUQ có PSSL"]||0)>0);
+    if(k==="notpssl") list=list.filter(r=>Number(r["ĐUQ có PSSL"]||0)<=0);
     if(k==="pssl70") list=list.filter(r=>Number(r["ĐUQ PSSL có gói từ 70k"]||0)>0);
     if(k==="subs") list=[...list];
     if(k==="revenue") list=[...list];
@@ -359,6 +415,10 @@ function getList(){
     if(k==="rev500") list=list.filter(r=>Number(r["Doanh thu bán hàng"]||0)>=500000);
     if(k==="rev1m") list=list.filter(r=>Number(r["Doanh thu bán hàng"]||0)>=1000000);
     if(k==="rev2m") list=list.filter(r=>Number(r["Doanh thu bán hàng"]||0)>=2000000);
+  }
+  const selectedListArea=$("listAreaFilter")?$("listAreaFilter").value:"all";
+  if(selectedListArea!=="all" && ["pssl","notpssl","pssl70","group","all","subs","revenue"].includes(mode)){
+    list=list.filter(r=>String(r["Đơn vị"]||"").trim()===selectedListArea);
   }
   if(q&&mode!=="search") list=list.filter(r=>FIELDS.some(f=>norm(r[f]).includes(q)));
   if(mode==="subs" || (mode==="area" && areaFilter && areaFilter.key==="subs")){
@@ -385,6 +445,7 @@ function renderAreas(){
   const labels={
     total:"Tổng ĐUQ",
     pssl:"ĐUQ có PSSL",
+    notpssl:"ĐUQ chưa PSSL",
     psslRate:"Tỷ lệ PSSL",
     pssl70:"PSSL ≥70k",
     subs:"Tổng thuê bao",
@@ -407,8 +468,8 @@ function renderAreas(){
   if(metric==="all"){
     list.sort((a,b)=>b.pssl-a.pssl||b.pssl70-a.pssl70||b.revenue-a.revenue);
     $("areaHead").innerHTML=`<tr>
-      <th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
-      <th>Tổng thuê bao</th><th>Tổng doanh thu</th>
+      <th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Chưa PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
+      <th title="Tổng số thuê bao của toàn bộ ĐUQ trong địa bàn">Tổng thuê bao</th><th title="Tổng doanh thu của toàn bộ ĐUQ trong địa bàn">Tổng doanh thu</th>
       <th>≥5 SIM</th><th>≥10 SIM</th><th>≥20 SIM</th><th>DT &lt;500K</th><th>DT ≥500K</th><th>DT ≥1tr</th><th>DT ≥2tr</th>
     </tr>`;
 
@@ -420,6 +481,7 @@ function renderAreas(){
         <td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td>
         <td class="click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Tổng ĐUQ">${a.total}</td>
         <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="ĐUQ có PSSL">${a.pssl}</td>
+        <td class="click-cell warning-cell" data-area="${esc(a.area)}" data-key="notpssl" data-label="ĐUQ chưa PSSL">${a.total-a.pssl}</td>
         <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="Tỷ lệ ĐUQ PSSL"><b>${psslRate.toFixed(1)}%</b></td>
         <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl70" data-label="PSSL gói từ 70k">${a.pssl70}</td>
         <td class="click-cell area-subs" data-area="${esc(a.area)}" data-key="subs" data-label="Tổng thuê bao">${new Intl.NumberFormat("vi-VN").format(a.subs)}</td>
@@ -434,7 +496,7 @@ function renderAreas(){
       </tr>`;
     }).join("");
   } else {
-    const metricValue=a=>metric==="psslRate"?(a.total>0?a.pssl/a.total*100:0):Number(a[metric]||0);
+    const metricValue=a=>metric==="psslRate"?(a.total>0?a.pssl/a.total*100:0):metric==="notpssl"?(a.total-a.pssl):Number(a[metric]||0);
 
     list=list.filter(a=>metricValue(a)>0);
     list.sort((a,b)=>metricValue(b)-metricValue(a)||b.total-a.total||b.revenue-a.revenue);
@@ -457,7 +519,7 @@ function renderAreas(){
   }
 
   if(!list.length){
-    $("areaBody").innerHTML=`<tr><td colspan="13" style="padding:24px;color:var(--muted)">Không có địa bàn phù hợp với bộ lọc đã chọn.</td></tr>`;
+    $("areaBody").innerHTML=`<tr><td colspan="16" style="padding:24px;color:var(--muted)">Không có địa bàn phù hợp với bộ lọc đã chọn.</td></tr>`;
   }
 
   document.querySelectorAll(".click-cell").forEach(el=>el.onclick=()=>openAreaMetric(el.dataset.area,el.dataset.key,el.dataset.label));
@@ -531,7 +593,7 @@ document.querySelectorAll("[data-group]").forEach(el=>el.onclick=()=>openGroup(e
 document.querySelectorAll("[data-mode]").forEach(el=>el.onclick=()=>openMode(el.dataset.mode));
 document.querySelectorAll(".leader-row").forEach(el=>el.onclick=()=>openDetail(DATA[Number(el.dataset.id)],false));
 document.querySelectorAll(".nav-btn").forEach(el=>el.onclick=()=>{if(el.dataset.page==="home")showHome();else if(el.dataset.page==="areas")showAreas();else{setPage("list");mode="search";$("listTitle").textContent="Tra cứu Điểm ủy quyền";$("groupSearch").style.display="none";render();}});
-$("quickMetric").addEventListener("change",renderAreas);$("areaMetric").addEventListener("change",renderAreas);$("resetAreaFilters").onclick=()=>{$("quickMetric").value="all";$("areaMetric").value="all";renderAreas();};$("globalSearch").addEventListener("input",searchAll);$("groupSearch").addEventListener("input",render);
+$("quickMetric").addEventListener("change",renderAreas);$("areaMetric").addEventListener("change",renderAreas);$("resetAreaFilters").onclick=()=>{$("quickMetric").value="all";$("areaMetric").value="all";renderAreas();};$("globalSearch").addEventListener("input",searchAll);$("groupSearch").addEventListener("input",render);$("listAreaFilter").addEventListener("change",render);
 $("back").onclick=()=>lastPage==="areas"?showAreas():showHome();$("areaBack").onclick=showHome;$("clear").onclick=showHome;$("close").onclick=()=>$("modal").classList.remove("show");$("modal").onclick=e=>{if(e.target.id==="modal")$("modal").classList.remove("show")};
 </script>
 </body></html>
