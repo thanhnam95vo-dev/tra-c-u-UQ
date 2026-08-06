@@ -1,72 +1,57 @@
 # Chương trình đồng hành cùng Điểm ủy quyền
 
-Dữ liệu từ **0h ngày 01/08/2026 đến 23h59 ngày 05/08/2026**.
+Dữ liệu cập nhật đến **12h51 ngày 06/08/2026**.
 
-## Nguồn số liệu chính
+## Nội dung bổ sung
+- Phân loại ĐUQ:
+  - ĐUQ trước năm 2026: **156**
+  - ĐUQ trong năm 2026: **28**
+  - ĐUQ mới: **45**
+- Tổng thuê bao PTM: **252**
+- Tổng thuê bao PTM từ 70k: **99**
+- Tổng doanh thu: **16,532,000 đồng**
 
-### Sheet `TH`
-Toàn bộ Dashboard, Top 3, PSSL và bảng 22 địa bàn lấy trực tiếp từ sheet `TH`.
+## Chức năng
+- Bấm vào từng thẻ phân loại để mở danh sách ĐUQ tương ứng.
+- Hiển thị phân loại ĐUQ trong danh sách và popup chi tiết.
+- Thêm KPI **Thuê bao PTM từ 70k**.
+- Thêm chỉ tiêu **Tổng TB PTM từ 70k** vào bộ lọc nhiều lựa chọn.
+- Thêm cột **Tổng TB PTM từ 70k** trong bảng Theo dõi 22 địa bàn.
+- Dòng tổng và thanh trạng thái của bảng 22 địa bàn có tổng TB PTM từ 70k.
+- Các số liệu tiếp tục có thể bấm để xem danh sách chi tiết.
 
-- Tổng ĐUQ: **229**
-- Nhóm Pro: **27**
-- Nhóm Plus: **30**
-- Nhóm Basic: **172**
-- Tổng thuê bao: **238**
-- Tổng doanh thu: **15,928,000 đồng**
-- ĐUQ có PSSL: **94**
-- ĐUQ chưa PSSL: **135**
-- ĐUQ PSSL gói từ 70k: **45**
-
-### Sheet `Đơn hàng`
-Chi tiết thuê bao được lấy theo:
-- Cột M: Mã ĐUQ
-- Cột AB: chỉ lấy trạng thái `Thành công`
-- Cột AV: Số thuê bao
-- Cột BA: Doanh thu từng thuê bao
-
-## Kết quả đối chiếu
-
-- Không có ID ĐUQ trống trong sheet `TH`.
-- Không có ID ĐUQ trùng trong sheet `TH`.
-- Đủ đúng **22 địa bàn**.
-- Tổng số ĐUQ, PSSL, PSSL ≥70k, thuê bao và doanh thu cộng theo 22 địa bàn đều khớp 100% với sheet `TH`.
-- Có **238** đơn hàng thành công map đúng mã ĐUQ trong sheet `TH`.
-- Tổng doanh thu các đơn hàng map đúng: **15,928,000 đồng**.
-- Hai giá trị này khớp chính xác với **238 thuê bao** và **15,928,000 đồng** trên sheet `TH`.
-- Có **7** đơn hàng thành công thuộc **6 mã** không tồn tại trong danh sách ĐUQ của sheet `TH`; các đơn này không được đưa vào Dashboard và popup ĐUQ để tránh sai lệch.
-
-Mã không tồn tại trong `TH`: `KBH001959, KBH028071_201, KBH173395, KBH173524, KBH199496, KBH335731`.
-
-## Quy tắc Top 3
-
-Top 3 của từng nhóm lấy đúng từ sheet `TH` theo thứ tự:
-1. Doanh thu bán hàng giảm dần.
-2. Nếu doanh thu bằng nhau, ưu tiên số lượng thuê bao cao hơn.
-3. Hiển thị đúng Tên ĐUQ, Khu vực, Số lượng thuê bao và Doanh thu.
-
-## Cập nhật GitHub Pages
-
+## Cập nhật GitHub
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
 
-- Đổi bộ lọc **Xem nhanh theo chỉ tiêu** từ droplist một lựa chọn sang danh sách có ô tick.
-- Có thể chọn đồng thời nhiều chỉ tiêu, ví dụ:
-  - ĐUQ có PSSL
-  - ĐUQ chưa PSSL
-  - Tổng thuê bao
-  - Tổng doanh thu
-- Bảng chỉ hiển thị các cột đã chọn cùng với Xếp hạng, Địa bàn và Tổng ĐUQ.
-- Chỉ hiển thị địa bàn có ít nhất một chỉ tiêu đã chọn lớn hơn 0.
-- Thứ tự xếp hạng ưu tiên theo chỉ tiêu được tick trước.
-- Bấm **Đặt lại bộ lọc** để trở về toàn bộ chỉ tiêu.
+- Tất cả nút **TB PTM từ 70k** có thể bấm để xem danh sách số thuê bao chi tiết.
+- Danh sách chi tiết được lấy từ sheet `Đơn hàng`:
+  - Cột M: Mã ĐUQ
+  - Cột AB: trạng thái `Thành công`
+  - Cột AV: số thuê bao
+  - Cột BA: doanh thu thuê bao
+  - Cột BC: đánh dấu `Thuê bao từ 70k = 1`
+- Popup có hai tab:
+  - Tất cả TB PTM
+  - TB PTM từ 70k
+- Tổng thuê bao từ 70k trong chi tiết: **99**
 
-- Cố định hàng tiêu đề khi cuộn dọc.
-- Cố định cột **XH** và **Địa bàn** khi cuộn ngang.
-- Thêm thanh trạng thái phía trên bảng với số địa bàn, tổng ĐUQ, PSSL, thuê bao và doanh thu.
-- Thêm dòng **TỔNG** ở cuối bảng.
-- Dòng tổng tự động thay đổi theo khu vực và các chỉ tiêu được tick chọn.
-- Dòng tổng được cố định ở cuối vùng bảng khi cuộn.
+- Đã sửa cách xử lý dữ liệu tab thuê bao để JavaScript chạy ổn định trên GitHub Pages và điện thoại.
 
-- Sửa độ rộng cột cố định để tiêu đề **Tổng ĐUQ** không còn bị cột **Địa bàn** che.
-- Cố định cột XH rộng 52px và cột Địa bàn rộng 150px.
-- Tất cả số liệu trong dòng **TỔNG** có thể bấm để xem danh sách ĐUQ chi tiết.
-- Khi bảng đang lọc theo khu vực hoặc nhiều chỉ tiêu, dòng tổng chỉ mở dữ liệu thuộc đúng phạm vi đang hiển thị.
+- Chia bảng **Theo dõi 22 địa bàn** thành 2 menu:
+  1. **Tổng quan**: SL ĐUQ, ĐUQ PSSL, Tỷ lệ PSSL, Chưa PSSL và phân loại chưa PSSL theo ĐUQ trước năm 2026, trong năm 2026, ĐUQ mới.
+  2. **Thuê bao & Doanh thu**: Tổng TB PTM, TB PTM từ 70k, các ngưỡng SIM và doanh thu.
+- Bổ sung chỉ tiêu:
+  - SL ĐUQ dưới 5 SIM
+  - SL ĐUQ từ 30 SIM
+  - SL ĐUQ doanh thu từ 3 triệu
+- Dòng tổng và tất cả số liệu vẫn có thể bấm xem danh sách chi tiết.
+
+- Thêm droplist **Bộ lọc chỉ tiêu** đặt cạnh droplist **22 địa bàn**.
+- Danh sách chỉ tiêu tự thay đổi theo menu:
+  - Tổng quan
+  - Thuê bao & Doanh thu
+- Khi chọn một chỉ tiêu:
+  - Chỉ hiển thị cột chỉ tiêu đó.
+  - Chỉ hiển thị địa bàn có giá trị lớn hơn 0.
+  - Tự sắp xếp từ cao xuống thấp.
+- Có thể kết hợp đồng thời bộ lọc chỉ tiêu và bộ lọc địa bàn.
