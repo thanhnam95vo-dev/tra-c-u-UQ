@@ -82,3 +82,10 @@ Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
   - Cột **XH di chuyển theo bảng**, không còn cố định bên trái.
 - Cột Địa bàn được đặt tại `left: 0` để luôn sát mép trái vùng bảng.
 - Header và dòng tổng vẫn cố định khi cuộn dọc.
+
+- Fix cứng cột **Địa bàn** trong bảng **Tổng quan 22 khu vực**.
+- Khi kéo ngang:
+  - Cột Địa bàn đứng im sát mép trái.
+  - Cột XH và các cột chỉ tiêu cuộn bình thường.
+- Header vẫn cố định khi cuộn dọc.
+- Dòng tổng vẫn cố định ở cuối bảng.
