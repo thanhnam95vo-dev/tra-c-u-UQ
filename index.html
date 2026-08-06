@@ -123,6 +123,282 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 @media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}.quick{grid-template-columns:repeat(3,1fr)}.area-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:850px){.charts,.leaders,.results,.pssl-grid,.action-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.quick-filter{grid-template-columns:1fr;gap:8px}h1{font-size:21px}.top-nav{grid-template-columns:1fr 1fr 1fr}.nav-btn{font-size:11px;padding:9px 4px}.menu{grid-template-columns:repeat(3,1fr);gap:5px}.menu-card{padding:10px 6px}.menu-card h3{font-size:14px}.menu-card p,.menu-card span{font-size:10px}.kpis{grid-template-columns:repeat(2,1fr)}.quick,.info,.metrics{grid-template-columns:repeat(2,1fr)}.summary-cards{grid-template-columns:1fr 1fr 1fr}}
+
+/* FIX: giữ cố định đầy đủ cột XH và Địa bàn khi kéo ngang */
+.area-table-wrap th:nth-child(1),
+.area-table-wrap td:nth-child(1){
+  width:56px!important;
+  min-width:56px!important;
+  max-width:56px!important;
+  left:0!important;
+  position:sticky!important;
+}
+
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  width:190px!important;
+  min-width:190px!important;
+  max-width:190px!important;
+  left:56px!important;
+  position:sticky!important;
+}
+
+.area-table-wrap thead th:nth-child(1),
+.area-table-wrap thead th:nth-child(2){
+  z-index:40!important;
+  background:#eaf4fb!important;
+}
+
+.area-table-wrap tbody td:nth-child(1),
+.area-table-wrap tbody td:nth-child(2){
+  z-index:25!important;
+  background:inherit!important;
+}
+
+.area-table-wrap tfoot td:nth-child(1),
+.area-table-wrap tfoot td:nth-child(2){
+  z-index:45!important;
+  background:#005baa!important;
+}
+
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  overflow:visible!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+  box-shadow:3px 0 0 rgba(0,91,170,.18)!important;
+}
+
+.area-table-wrap{
+  isolation:isolate;
+}
+
+/* COMPACT FIX: thu gọn cột XH và Địa bàn */
+.area-table-wrap th:nth-child(1),
+.area-table-wrap td:nth-child(1){
+  width:42px!important;
+  min-width:42px!important;
+  max-width:42px!important;
+  left:0!important;
+  padding-left:4px!important;
+  padding-right:4px!important;
+  text-align:center!important;
+}
+
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  width:135px!important;
+  min-width:135px!important;
+  max-width:135px!important;
+  left:42px!important;
+  padding-left:7px!important;
+  padding-right:7px!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+}
+
+.area-table-wrap thead th:nth-child(2){
+  white-space:nowrap!important;
+  font-size:12px!important;
+}
+
+.area-table-wrap tbody td:nth-child(2),
+.area-table-wrap tfoot td:nth-child(2){
+  word-break:normal!important;
+  overflow-wrap:anywhere!important;
+}
+
+.area-table-wrap th,
+.area-table-wrap td{
+  padding-top:7px!important;
+  padding-bottom:7px!important;
+}
+
+.area-table-wrap .col-rank{
+  width:42px!important;
+  min-width:42px!important;
+}
+.area-table-wrap .col-area{
+  width:135px!important;
+  min-width:135px!important;
+}
+
+/* COMPACT FIX 2: tối ưu thêm không gian bảng 22 địa bàn */
+.area-table-wrap th:nth-child(1),
+.area-table-wrap td:nth-child(1){
+  width:36px!important;
+  min-width:36px!important;
+  max-width:36px!important;
+  left:0!important;
+  padding-left:2px!important;
+  padding-right:2px!important;
+  font-size:10px!important;
+}
+
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  width:108px!important;
+  min-width:108px!important;
+  max-width:108px!important;
+  left:36px!important;
+  padding-left:4px!important;
+  padding-right:4px!important;
+  font-size:11px!important;
+  line-height:1.05!important;
+  white-space:normal!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+
+.area-table-wrap thead th:nth-child(2){
+  white-space:nowrap!important;
+}
+
+.area-table-wrap tbody td:nth-child(2){
+  display:table-cell!important;
+  max-height:30px!important;
+}
+
+.area-table-wrap th,
+.area-table-wrap td{
+  padding-top:5px!important;
+  padding-bottom:5px!important;
+  padding-left:5px!important;
+  padding-right:5px!important;
+  font-size:10.5px!important;
+}
+
+.area-table-wrap thead th{
+  line-height:1.05!important;
+}
+
+.area-table-wrap .col-rank{
+  width:36px!important;
+  min-width:36px!important;
+}
+.area-table-wrap .col-area{
+  width:108px!important;
+  min-width:108px!important;
+}
+.area-table-wrap .col-metric{
+  width:68px!important;
+  min-width:68px!important;
+}
+.area-table-wrap .col-metric-wide{
+  width:86px!important;
+  min-width:86px!important;
+}
+.area-table-wrap .col-revenue{
+  width:104px!important;
+  min-width:104px!important;
+}
+
+.area-table-wrap tbody td:nth-child(2),
+.area-table-wrap tfoot td:nth-child(2){
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+
+/* FINAL COMPACT: cột Địa bàn vừa sát tên Dương Minh Châu */
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  width:95px!important;
+  min-width:95px!important;
+  max-width:95px!important;
+  left:36px!important;
+  padding-left:2px!important;
+  padding-right:2px!important;
+  font-size:10.5px!important;
+  line-height:1.0!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+
+.area-table-wrap thead th:nth-child(2){
+  text-align:center!important;
+}
+
+.area-table-wrap tbody td:nth-child(2),
+.area-table-wrap tfoot td:nth-child(2){
+  text-align:left!important;
+}
+
+.area-table-wrap .col-area{
+  width:95px!important;
+  min-width:95px!important;
+}
+
+/* ULTRA COMPACT: thu gần cột Địa bàn để xem thêm chỉ tiêu */
+.area-table-wrap th:nth-child(1),
+.area-table-wrap td:nth-child(1){
+  width:30px!important;
+  min-width:30px!important;
+  max-width:30px!important;
+  left:0!important;
+  padding-left:1px!important;
+  padding-right:1px!important;
+  font-size:9.5px!important;
+}
+
+.area-table-wrap th:nth-child(2),
+.area-table-wrap td:nth-child(2){
+  width:78px!important;
+  min-width:78px!important;
+  max-width:78px!important;
+  left:30px!important;
+  padding-left:1px!important;
+  padding-right:1px!important;
+  font-size:10px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+
+.area-table-wrap thead th:nth-child(2){
+  text-align:center!important;
+}
+
+.area-table-wrap tbody td:nth-child(2),
+.area-table-wrap tfoot td:nth-child(2){
+  text-align:left!important;
+  text-indent:0!important;
+}
+
+.area-table-wrap th,
+.area-table-wrap td{
+  padding-left:3px!important;
+  padding-right:3px!important;
+}
+
+.area-table-wrap .col-rank{
+  width:30px!important;
+  min-width:30px!important;
+}
+
+.area-table-wrap .col-area{
+  width:78px!important;
+  min-width:78px!important;
+}
+
+.area-table-wrap .col-metric{
+  width:62px!important;
+  min-width:62px!important;
+}
+
+.area-table-wrap .col-metric-wide{
+  width:80px!important;
+  min-width:80px!important;
+}
+
+.area-table-wrap .col-revenue{
+  width:96px!important;
+  min-width:96px!important;
+}
 </style>
 </head>
 <body>
@@ -275,8 +551,8 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 </div>
 <div class="area-status" id="areaStatus">Hiển thị 22/22 địa bàn</div><div class="area-table-wrap"><table>
 <colgroup>
-  <col class="col-rank">
-  <col class="col-area">
+  <col class="col-rank" style="width:30px;min-width:30px">
+  <col class="col-area" style="width:78px;min-width:78px">
   <col class="col-metric">
   <col class="col-metric">
   <col class="col-metric">
