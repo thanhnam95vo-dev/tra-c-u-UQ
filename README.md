@@ -70,3 +70,15 @@ Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
 - Giảm padding ngang trong toàn bộ bảng.
 - Thu gọn thêm các cột chỉ tiêu để hiển thị được nhiều thông tin hơn.
 - Vẫn giữ cố định cột XH và Địa bàn khi kéo ngang.
+
+- Khóa cứng cột **XH** và **Địa bàn** bằng `position: sticky` với `z-index` ưu tiên cao.
+- Cột Địa bàn luôn đứng yên khi kéo ngang.
+- Header tiếp tục cố định khi cuộn dọc.
+- Dòng tổng tiếp tục cố định ở cuối vùng bảng.
+- Bổ sung `translateZ(0)` để tăng độ ổn định trên Chrome và trình duyệt di động.
+
+- Điều chỉnh cơ chế cố định cột:
+  - **Chỉ cột Địa bàn đứng im** khi kéo ngang.
+  - Cột **XH di chuyển theo bảng**, không còn cố định bên trái.
+- Cột Địa bàn được đặt tại `left: 0` để luôn sát mép trái vùng bảng.
+- Header và dòng tổng vẫn cố định khi cuộn dọc.
