@@ -58,3 +58,15 @@ Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
 - Chỉ hiển thị địa bàn có ít nhất một chỉ tiêu đã chọn lớn hơn 0.
 - Thứ tự xếp hạng ưu tiên theo chỉ tiêu được tick trước.
 - Bấm **Đặt lại bộ lọc** để trở về toàn bộ chỉ tiêu.
+
+- Cố định hàng tiêu đề khi cuộn dọc.
+- Cố định cột **XH** và **Địa bàn** khi cuộn ngang.
+- Thêm thanh trạng thái phía trên bảng với số địa bàn, tổng ĐUQ, PSSL, thuê bao và doanh thu.
+- Thêm dòng **TỔNG** ở cuối bảng.
+- Dòng tổng tự động thay đổi theo khu vực và các chỉ tiêu được tick chọn.
+- Dòng tổng được cố định ở cuối vùng bảng khi cuộn.
+
+- Sửa độ rộng cột cố định để tiêu đề **Tổng ĐUQ** không còn bị cột **Địa bàn** che.
+- Cố định cột XH rộng 52px và cột Địa bàn rộng 150px.
+- Tất cả số liệu trong dòng **TỔNG** có thể bấm để xem danh sách ĐUQ chi tiết.
+- Khi bảng đang lọc theo khu vực hoặc nhiều chỉ tiêu, dòng tổng chỉ mở dữ liệu thuộc đúng phạm vi đang hiển thị.

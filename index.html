@@ -40,7 +40,30 @@ main{max-width:1180px;margin:-12px auto 40px;padding:0 11px}.search{display:flex
 .metric-option input{width:17px;height:17px;accent-color:var(--p);flex:none}
 .metric-all{font-weight:900;color:var(--p);border-bottom:1px solid var(--line);margin-bottom:4px;padding-bottom:10px}
 .metric-selected-count{display:inline-block;background:#e7f3fb;color:var(--p);font-weight:900;border-radius:999px;padding:2px 7px;margin-left:5px;font-size:11px}
-.filter-field label{font-size:13px;font-weight:900;color:var(--p)}.filter-field select{padding:11px 12px;font-size:14px;background:#fff}.reset-filter{border:0;border-radius:12px;padding:12px 14px;background:#e8f3fb;color:var(--p);font-weight:900;white-space:nowrap}.area-table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px}table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8px;border-bottom:1px solid #edf1f5;text-align:center;font-size:12px}th{background:#eaf4fb;color:#075faa;position:sticky;top:0;z-index:2}td.area-name{text-align:left;font-weight:800;white-space:nowrap}tr:hover td{background:#f7fbfe}.click-cell{cursor:pointer;font-weight:800;color:var(--p)}.area-subs{color:#0b8b4d;font-weight:900}.area-revenue{color:#b66b05;font-weight:900;white-space:nowrap}.heat-good{background:#e8f8ef!important}.heat-mid{background:#fff6df!important}.heat-low{background:#ffeaea!important}
+.filter-field label{font-size:13px;font-weight:900;color:var(--p)}.filter-field select{padding:11px 12px;font-size:14px;background:#fff}.reset-filter{border:0;border-radius:12px;padding:12px 14px;background:#e8f3fb;color:var(--p);font-weight:900;white-space:nowrap}.area-table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px}
+
+.area-table-wrap .col-rank{width:52px;min-width:52px}
+.area-table-wrap .col-area{width:150px;min-width:150px}
+.area-table-wrap .col-metric{width:82px;min-width:82px}
+.area-table-wrap .col-metric-wide{width:105px;min-width:105px}
+.area-table-wrap .col-revenue{width:125px;min-width:125px}
+.area-table-wrap th:nth-child(1),.area-table-wrap td:nth-child(1){width:52px;min-width:52px;max-width:52px}
+.area-table-wrap th:nth-child(2),.area-table-wrap td:nth-child(2){width:150px;min-width:150px;max-width:150px}
+.area-table-wrap th,.area-table-wrap td{white-space:nowrap}
+.area-table-wrap thead th:nth-child(2),.area-table-wrap tbody td:nth-child(2){box-shadow:2px 0 0 #dbe5ee}
+.total-click{cursor:pointer!important;text-decoration:underline;text-underline-offset:3px}
+.total-click:hover{background:#004b8d!important}
+.area-status{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px;font-size:13px;font-weight:800;color:var(--p)}
+.area-table-wrap{max-height:620px;overflow:auto;position:relative}
+.area-table-wrap table{border-collapse:separate;border-spacing:0}
+.area-table-wrap thead th{position:sticky;top:0;z-index:12;background:#eaf4fb}
+.area-table-wrap thead th:nth-child(1),.area-table-wrap tbody td:nth-child(1),.area-table-wrap tfoot td:nth-child(1){position:sticky;left:0;z-index:10}
+.area-table-wrap thead th:nth-child(2),.area-table-wrap tbody td:nth-child(2),.area-table-wrap tfoot td:nth-child(2){position:sticky;left:52px;z-index:9}
+.area-table-wrap thead th:nth-child(1),.area-table-wrap thead th:nth-child(2){z-index:15;background:#eaf4fb}
+.area-table-wrap tbody td:nth-child(1),.area-table-wrap tbody td:nth-child(2){background:inherit}
+.area-table-wrap tfoot td{position:sticky;bottom:0;z-index:13;background:#005baa!important;color:#fff!important;font-weight:900;border-top:2px solid #004b8d;white-space:nowrap}
+.area-table-wrap tfoot td:nth-child(1),.area-table-wrap tfoot td:nth-child(2){z-index:16;background:#005baa!important}
+table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8px;border-bottom:1px solid #edf1f5;text-align:center;font-size:12px}th{background:#eaf4fb;color:#075faa;position:sticky;top:0;z-index:2}td.area-name{text-align:left;font-weight:800;white-space:nowrap}tr:hover td{background:#f7fbfe}.click-cell{cursor:pointer;font-weight:800;color:var(--p)}.area-subs{color:#0b8b4d;font-weight:900}.area-revenue{color:#b66b05;font-weight:900;white-space:nowrap}.heat-good{background:#e8f8ef!important}.heat-mid{background:#fff6df!important}.heat-low{background:#ffeaea!important}
 .area-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}.area-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.area-card small{color:var(--muted);font-weight:800}.area-card b{display:block;font-size:22px;color:var(--p);margin-top:5px}
 .modal{display:none;position:fixed;inset:0;background:rgba(8,23,40,.64);z-index:60;align-items:flex-end;justify-content:center;backdrop-filter:blur(5px)}.modal.show{display:flex}.sheet{width:100%;max-width:860px;max-height:94vh;background:#f3f7fb;border-radius:26px 26px 0 0;overflow:hidden;box-shadow:0 -20px 60px rgba(0,0,0,.22)}.sheet-top{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:20px;display:flex;justify-content:space-between;gap:12px}.sheet-top h2{margin:0;font-size:19px}.sheet-top p{margin:6px 0 0;font-size:12px;opacity:.9}.close{width:40px;height:40px;border-radius:50%;font-size:23px;background:rgba(255,255,255,.18);color:#fff}.sheet-body{padding:14px;overflow:auto;max-height:calc(94vh - 90px)}.hero-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px;display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center}.avatar{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#e8f5ff,#cfeaff);display:grid;place-items:center;font-size:27px}.status-badge{padding:7px 10px;border-radius:999px;font-size:11px;font-weight:900}.status-on{background:#e6f8ed;color:#087740}.status-off{background:#ffe8e8;color:#a62f2f}.section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px}.section h3{color:var(--p);font-size:14px;margin:0 0 9px}.info{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.info div{background:#f7fafc;border-radius:11px;padding:10px}.info small{display:block;color:var(--muted);font-weight:800}.info b{display:block;margin-top:5px;word-break:break-word}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.metric{background:linear-gradient(135deg,#eef8ff,#fff);border-radius:13px;padding:12px}.metric strong{display:block;color:var(--p);font-size:18px;margin-top:5px}
 
@@ -285,11 +308,22 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 
   <button id="resetAreaFilters" class="reset-filter">↻ Đặt lại bộ lọc</button>
 </div>
-<div class="area-table-wrap"><table>
+<div class="area-status" id="areaStatus">Hiển thị 22/22 địa bàn</div><div class="area-table-wrap"><table>
+<colgroup>
+  <col class="col-rank">
+  <col class="col-area">
+  <col class="col-metric">
+  <col class="col-metric">
+  <col class="col-metric">
+  <col class="col-metric">
+  <col class="col-metric">
+  <col class="col-metric-wide">
+  <col class="col-revenue">
+</colgroup>
 <thead id="areaHead"><tr>
 <th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Chưa PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
 <th>≥5 SIM</th><th>≥10 SIM</th><th>≥20 SIM</th><th>DT &lt;500K</th><th>DT ≥500K</th><th>DT ≥1tr</th><th>DT ≥2tr</th>
-</tr></thead><tbody id="areaBody"></tbody>
+</tr></thead><tbody id="areaBody"></tbody><tfoot id="areaFoot"></tfoot>
 </table></div>
 </section>
 
@@ -417,9 +451,13 @@ function getList(){
   else if(mode==="notpssl") list=DATA.filter(r=>Number(r["ĐUQ có PSSL"]||0)<=0);
   else if(mode==="pssl70") list=DATA.filter(r=>Number(r["ĐUQ PSSL có gói từ 70k"]||0)>0);
   else if(mode==="area"){
-    list=areaFilter.area
-      ? DATA.filter(r=>String(r["Đơn vị"]||"").trim()===areaFilter.area)
-      : DATA.filter(r=>r._group===areaFilter.group);
+    if(areaFilter && Array.isArray(areaFilter.areas)){
+      list=DATA.filter(r=>areaFilter.areas.includes(String(r["Đơn vị"]||"").trim()));
+    }else{
+      list=areaFilter.area
+        ? DATA.filter(r=>String(r["Đơn vị"]||"").trim()===areaFilter.area)
+        : DATA.filter(r=>r._group===areaFilter.group);
+    }
     const k=areaFilter.key;
     if(k==="pssl") list=list.filter(r=>Number(r["ĐUQ có PSSL"]||0)>0);
     if(k==="notpssl") list=list.filter(r=>Number(r["ĐUQ có PSSL"]||0)<=0);
@@ -461,115 +499,104 @@ function getSelectedMetrics(){
   if($("metricAll").checked) return [];
   return [...document.querySelectorAll(".metric-check:checked")].map(x=>x.value);
 }
-
 function metricValue(a,metric){
   if(metric==="psslRate") return a.total>0 ? a.pssl/a.total*100 : 0;
   if(metric==="notpssl") return a.total-a.pssl;
   return Number(a[metric]||0);
 }
-
 function metricDisplay(metric,value){
   if(metric==="psslRate") return value.toFixed(1)+"%";
   if(metric==="revenue") return new Intl.NumberFormat("vi-VN").format(value)+"đ";
   return new Intl.NumberFormat("vi-VN").format(value);
 }
-
-function metricClickKey(metric){
-  return metric==="psslRate" ? "pssl" : metric;
+function metricClickKey(metric){return metric==="psslRate"?"pssl":metric;}
+function areaTotals(list){
+  const t={
+    total:list.reduce((s,a)=>s+Number(a.total||0),0),
+    pssl:list.reduce((s,a)=>s+Number(a.pssl||0),0),
+    pssl70:list.reduce((s,a)=>s+Number(a.pssl70||0),0),
+    subs:list.reduce((s,a)=>s+Number(a.subs||0),0),
+    revenue:list.reduce((s,a)=>s+Number(a.revenue||0),0),
+    sim5:list.reduce((s,a)=>s+Number(a.sim5||0),0),
+    sim10:list.reduce((s,a)=>s+Number(a.sim10||0),0),
+    sim20:list.reduce((s,a)=>s+Number(a.sim20||0),0),
+    rev_under500:list.reduce((s,a)=>s+Number(a.rev_under500||0),0),
+    rev500:list.reduce((s,a)=>s+Number(a.rev500||0),0),
+    rev1m:list.reduce((s,a)=>s+Number(a.rev1m||0),0),
+    rev2m:list.reduce((s,a)=>s+Number(a.rev2m||0),0)
+  };
+  t.notpssl=t.total-t.pssl;
+  t.psslRate=t.total>0?t.pssl/t.total*100:0;
+  return t;
+}
+function openAggregateMetric(metric,label,areas){
+  lastPage="areas";
+  mode="area";
+  group=null;
+  areaFilter={areas:[...areas],key:metric};
+  setPage("list");
+  $("groupSearch").style.display="block";
+  $("listAreaFilterWrap").style.display="none";
+  $("groupSearch").value="";
+  $("listTitle").textContent=`TỔNG · ${label}`;
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderAreas(){
   const selectedMetrics=getSelectedMetrics();
-  const selectedArea=$("areaMetric") ? $("areaMetric").value : "all";
-  const labels={
-    total:"Tổng ĐUQ",
-    pssl:"ĐUQ có PSSL",
-    notpssl:"ĐUQ chưa PSSL",
-    psslRate:"Tỷ lệ PSSL",
-    pssl70:"PSSL ≥70k",
-    subs:"Tổng thuê bao",
-    revenue:"Tổng doanh thu",
-    sim5:"≥5 SIM",
-    sim10:"≥10 SIM",
-    sim20:"≥20 SIM",
-    rev_under500:"DT dưới 500K",
-    rev500:"DT ≥500K",
-    rev1m:"DT ≥1 triệu",
-    rev2m:"DT ≥2 triệu"
-  };
-
+  const selectedArea=$("areaMetric")?$("areaMetric").value:"all";
+  const labels={total:"Tổng ĐUQ",pssl:"ĐUQ có PSSL",notpssl:"ĐUQ chưa PSSL",psslRate:"Tỷ lệ PSSL",pssl70:"PSSL ≥70k",subs:"Tổng thuê bao",revenue:"Tổng doanh thu",sim5:"≥5 SIM",sim10:"≥10 SIM",sim20:"≥20 SIM",rev_under500:"DT dưới 500K",rev500:"DT ≥500K",rev1m:"DT ≥1 triệu",rev2m:"DT ≥2 triệu"};
   let list=[...AREA_STATS];
-  if(selectedArea!=="all"){
-    list=list.filter(a=>String(a.area).trim()===selectedArea);
-  }
+  if(selectedArea!=="all") list=list.filter(a=>String(a.area).trim()===selectedArea);
 
   if(!selectedMetrics.length){
     list.sort((a,b)=>b.pssl-a.pssl||b.pssl70-a.pssl70||b.revenue-a.revenue);
-    $("areaHead").innerHTML=`<tr>
-      <th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Chưa PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th>
-      <th>Tổng thuê bao</th><th>Tổng doanh thu</th>
-      <th>≥5 SIM</th><th>≥10 SIM</th><th>≥20 SIM</th><th>DT &lt;500K</th><th>DT ≥500K</th><th>DT ≥1tr</th><th>DT ≥2tr</th>
-    </tr>`;
-
+    $("areaHead").innerHTML=`<tr><th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th><th>PSSL</th><th>Chưa PSSL</th><th>Tỷ lệ PSSL</th><th>PSSL ≥70k</th><th>Tổng thuê bao</th><th>Tổng doanh thu</th><th>≥5 SIM</th><th>≥10 SIM</th><th>≥20 SIM</th><th>DT &lt;500K</th><th>DT ≥500K</th><th>DT ≥1tr</th><th>DT ≥2tr</th></tr>`;
     $("areaBody").innerHTML=list.map((a,i)=>{
-      const psslRate=a.total>0?(a.pssl/a.total*100):0;
-      const rateClass=psslRate>=70?"heat-good":psslRate>=40?"heat-mid":"heat-low";
-      return `<tr class="${rateClass}">
-        <td>${i+1}</td>
-        <td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Tổng ĐUQ">${a.total}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="ĐUQ có PSSL">${a.pssl}</td>
-        <td class="click-cell warning-cell" data-area="${esc(a.area)}" data-key="notpssl" data-label="ĐUQ chưa PSSL">${a.total-a.pssl}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="Tỷ lệ ĐUQ PSSL"><b>${psslRate.toFixed(1)}%</b></td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="pssl70" data-label="PSSL gói từ 70k">${a.pssl70}</td>
-        <td class="click-cell area-subs" data-area="${esc(a.area)}" data-key="subs" data-label="Tổng thuê bao">${new Intl.NumberFormat("vi-VN").format(a.subs)}</td>
-        <td class="click-cell area-revenue" data-area="${esc(a.area)}" data-key="revenue" data-label="Tổng doanh thu">${new Intl.NumberFormat("vi-VN").format(a.revenue)}đ</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="sim5" data-label="ĐUQ bán từ 5 SIM">${a.sim5}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="sim10" data-label="ĐUQ bán từ 10 SIM">${a.sim10}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="sim20" data-label="ĐUQ bán từ 20 SIM">${a.sim20}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="rev_under500" data-label="Doanh thu dưới 500 nghìn">${a.rev_under500}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="rev500" data-label="Doanh thu từ 500 nghìn">${a.rev500}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="rev1m" data-label="Doanh thu từ 1 triệu">${a.rev1m}</td>
-        <td class="click-cell" data-area="${esc(a.area)}" data-key="rev2m" data-label="Doanh thu từ 2 triệu">${a.rev2m}</td>
-      </tr>`;
+      const rate=a.total>0?a.pssl/a.total*100:0, cls=rate>=70?"heat-good":rate>=40?"heat-mid":"heat-low";
+      return `<tr class="${cls}"><td>${i+1}</td><td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Tổng ĐUQ">${a.total}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="ĐUQ có PSSL">${a.pssl}</td><td class="click-cell warning-cell" data-area="${esc(a.area)}" data-key="notpssl" data-label="ĐUQ chưa PSSL">${a.total-a.pssl}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="pssl" data-label="Tỷ lệ ĐUQ PSSL"><b>${rate.toFixed(1)}%</b></td><td class="click-cell" data-area="${esc(a.area)}" data-key="pssl70" data-label="PSSL gói từ 70k">${a.pssl70}</td><td class="click-cell area-subs" data-area="${esc(a.area)}" data-key="subs" data-label="Tổng thuê bao">${new Intl.NumberFormat("vi-VN").format(a.subs)}</td><td class="click-cell area-revenue" data-area="${esc(a.area)}" data-key="revenue" data-label="Tổng doanh thu">${new Intl.NumberFormat("vi-VN").format(a.revenue)}đ</td><td class="click-cell" data-area="${esc(a.area)}" data-key="sim5" data-label="ĐUQ bán từ 5 SIM">${a.sim5}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="sim10" data-label="ĐUQ bán từ 10 SIM">${a.sim10}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="sim20" data-label="ĐUQ bán từ 20 SIM">${a.sim20}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="rev_under500" data-label="Doanh thu dưới 500 nghìn">${a.rev_under500}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="rev500" data-label="Doanh thu từ 500 nghìn">${a.rev500}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="rev1m" data-label="Doanh thu từ 1 triệu">${a.rev1m}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="rev2m" data-label="Doanh thu từ 2 triệu">${a.rev2m}</td></tr>`;
     }).join("");
-  }else{
-    // Chỉ hiển thị địa bàn có ít nhất một chỉ tiêu được chọn lớn hơn 0
-    list=list.filter(a=>selectedMetrics.some(m=>metricValue(a,m)>0));
-
-    // Sắp xếp theo chỉ tiêu được tick đầu tiên, sau đó theo các chỉ tiêu tiếp theo
-    list.sort((a,b)=>{
-      for(const m of selectedMetrics){
-        const diff=metricValue(b,m)-metricValue(a,m);
-        if(diff!==0) return diff;
-      }
-      return b.total-a.total||b.revenue-a.revenue;
-    });
-
-    $("areaHead").innerHTML=`<tr>
-      <th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th>
-      ${selectedMetrics.filter(m=>m!=="total").map(m=>`<th>${labels[m]}</th>`).join("")}
+    const t=areaTotals(list);
+    $("areaFoot").innerHTML=`<tr>
+      <td></td><td>TỔNG (${list.length} địa bàn)</td>
+      <td class="total-click" data-total-key="total" data-total-label="Tổng ĐUQ">${metricDisplay("total",t.total)}</td>
+      <td class="total-click" data-total-key="pssl" data-total-label="ĐUQ có PSSL">${metricDisplay("pssl",t.pssl)}</td>
+      <td class="total-click" data-total-key="notpssl" data-total-label="ĐUQ chưa PSSL">${metricDisplay("notpssl",t.notpssl)}</td>
+      <td class="total-click" data-total-key="pssl" data-total-label="Tỷ lệ PSSL">${metricDisplay("psslRate",t.psslRate)}</td>
+      <td class="total-click" data-total-key="pssl70" data-total-label="PSSL gói từ 70k">${metricDisplay("pssl70",t.pssl70)}</td>
+      <td class="total-click" data-total-key="subs" data-total-label="Tổng thuê bao">${metricDisplay("subs",t.subs)}</td>
+      <td class="total-click" data-total-key="revenue" data-total-label="Tổng doanh thu">${metricDisplay("revenue",t.revenue)}</td>
+      <td class="total-click" data-total-key="sim5" data-total-label="ĐUQ bán từ 5 SIM">${metricDisplay("sim5",t.sim5)}</td>
+      <td class="total-click" data-total-key="sim10" data-total-label="ĐUQ bán từ 10 SIM">${metricDisplay("sim10",t.sim10)}</td>
+      <td class="total-click" data-total-key="sim20" data-total-label="ĐUQ bán từ 20 SIM">${metricDisplay("sim20",t.sim20)}</td>
+      <td class="total-click" data-total-key="rev_under500" data-total-label="Doanh thu dưới 500 nghìn">${metricDisplay("rev_under500",t.rev_under500)}</td>
+      <td class="total-click" data-total-key="rev500" data-total-label="Doanh thu từ 500 nghìn">${metricDisplay("rev500",t.rev500)}</td>
+      <td class="total-click" data-total-key="rev1m" data-total-label="Doanh thu từ 1 triệu">${metricDisplay("rev1m",t.rev1m)}</td>
+      <td class="total-click" data-total-key="rev2m" data-total-label="Doanh thu từ 2 triệu">${metricDisplay("rev2m",t.rev2m)}</td>
     </tr>`;
-
-    $("areaBody").innerHTML=list.map((a,i)=>`<tr>
-      <td>${i+1}</td>
-      <td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td>
-      <td class="click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Tổng ĐUQ">${a.total}</td>
-      ${selectedMetrics.filter(m=>m!=="total").map(m=>{
-        const value=metricValue(a,m);
-        const css=m==="notpssl"?" warning-cell":m==="subs"?" area-subs":m==="revenue"?" area-revenue":"";
-        return `<td class="click-cell${css}" data-area="${esc(a.area)}" data-key="${metricClickKey(m)}" data-label="${labels[m]}"><b>${metricDisplay(m,value)}</b></td>`;
-      }).join("")}
-    </tr>`).join("");
+  }else{
+    list=list.filter(a=>selectedMetrics.some(m=>metricValue(a,m)>0));
+    list.sort((a,b)=>{for(const m of selectedMetrics){const d=metricValue(b,m)-metricValue(a,m);if(d!==0)return d;}return b.total-a.total||b.revenue-a.revenue;});
+    $("areaHead").innerHTML=`<tr><th>XH</th><th>Địa bàn</th><th>Tổng ĐUQ</th>${selectedMetrics.filter(m=>m!=="total").map(m=>`<th>${labels[m]}</th>`).join("")}</tr>`;
+    $("areaBody").innerHTML=list.map((a,i)=>`<tr><td>${i+1}</td><td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td><td class="click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Tổng ĐUQ">${a.total}</td>${selectedMetrics.filter(m=>m!=="total").map(m=>{const v=metricValue(a,m),css=m==="notpssl"?" warning-cell":m==="subs"?" area-subs":m==="revenue"?" area-revenue":"";return `<td class="click-cell${css}" data-area="${esc(a.area)}" data-key="${metricClickKey(m)}" data-label="${labels[m]}"><b>${metricDisplay(m,v)}</b></td>`;}).join("")}</tr>`).join("");
+    const t=areaTotals(list);
+    $("areaFoot").innerHTML=`<tr>
+      <td></td><td>TỔNG (${list.length} địa bàn)</td>
+      <td class="total-click" data-total-key="total" data-total-label="Tổng ĐUQ">${metricDisplay("total",t.total)}</td>
+      ${selectedMetrics.filter(m=>m!=="total").map(m=>`<td class="total-click" data-total-key="${metricClickKey(m)}" data-total-label="${labels[m]}">${metricDisplay(m,metricValue(t,m))}</td>`).join("")}
+    </tr>`;
   }
-
-  if(!list.length){
-    const colCount=selectedMetrics.length ? 3+selectedMetrics.filter(m=>m!=="total").length : 16;
-    $("areaBody").innerHTML=`<tr><td colspan="${colCount}" style="padding:24px;color:var(--muted)">Không có địa bàn phù hợp với bộ lọc đã chọn.</td></tr>`;
-  }
-
+  if(!list.length){const c=selectedMetrics.length?3+selectedMetrics.filter(m=>m!=="total").length:16;$("areaBody").innerHTML=`<tr><td colspan="${c}" style="padding:24px;color:var(--muted)">Không có địa bàn phù hợp với bộ lọc đã chọn.</td></tr>`;$("areaFoot").innerHTML="";}
+  const total=areaTotals(list);
+  $("areaStatus").textContent=`Hiển thị ${list.length}/22 địa bàn | Tổng ĐUQ: ${total.total} | PSSL: ${total.pssl} | Thuê bao: ${new Intl.NumberFormat("vi-VN").format(total.subs)} | Doanh thu: ${new Intl.NumberFormat("vi-VN").format(total.revenue)}đ`;
   document.querySelectorAll(".click-cell").forEach(el=>el.onclick=()=>openAreaMetric(el.dataset.area,el.dataset.key,el.dataset.label));
+  const visibleAreas=list.map(a=>a.area);
+  document.querySelectorAll(".total-click").forEach(el=>el.onclick=()=>{
+    openAggregateMetric(el.dataset.totalKey,el.dataset.totalLabel,visibleAreas);
+  });
 }
+
 function item(label,value){return `<div><small>${esc(label)}</small><b>${esc(value||"—")}</b></div>`}
 function recordText(r){return [`Tên ĐUQ: ${r["Tên ĐUQ"]}`,`Đơn vị: ${r["Đơn vị"]}`,`ID điểm bán: ${r["ID điểm bán"]}`,`Nhân viên hỗ trợ: ${r["Nhân viên hỗ trợ"]}`,`SĐT: ${r["Số điện thoại nhân viên hỗ trợ"]}`,`Thuê bao: ${r["Số lượng Thuê bao"]}`,`Doanh thu: ${fmt("Doanh thu bán hàng",r["Doanh thu bán hàng"])}`,`ĐUQ có PSSL: ${yesno(r["ĐUQ có PSSL"])}`,`PSSL gói từ 70k: ${yesno(r["ĐUQ PSSL có gói từ 70k"])}`].join("\n")}
 function orderDetailsHtml(r){
