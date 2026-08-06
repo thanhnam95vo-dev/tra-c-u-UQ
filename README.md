@@ -93,3 +93,6 @@ Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
 - Menu giờ được bật/tắt theo đúng chế độ:
   - Hiện khi mở ĐUQ chưa PSSL.
   - Ẩn ở các danh sách khác.
+
+- Droplist khu vực trong mục **ĐUQ chưa PSSL** hiển thị số lượng theo từng khu vực, ví dụ `Đức Hòa (11)`.
+- Số lượng tự thay đổi theo menu đang chọn: trước năm 2026, trong năm 2026 hoặc ĐUQ mới.

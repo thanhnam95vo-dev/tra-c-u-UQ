@@ -106,7 +106,7 @@ table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8p
 .notpssl-class-card.active small,.notpssl-class-card.active strong{color:#fff}
 @media(max-width:700px){.notpssl-class-menu{grid-template-columns:repeat(2,1fr)}}
 .list-area-filter{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:10px}
-.list-area-filter label{font-size:13px;font-weight:900;color:var(--p)}
+#listAreaFilter option{font-size:14px}.list-area-filter select{font-weight:700}.list-area-filter label{font-size:13px;font-weight:900;color:var(--p)}
 .list-area-filter select{padding:11px 12px;font-size:14px;background:#fff}
 .warning-cell{color:#c93232!important;font-weight:900;background:#fff1f1!important}
 .warning-cell:hover{background:#ffe2e2!important}
@@ -455,8 +455,29 @@ function getList(){
   }
   return list;
 }
+
+function updateListAreaFilterCounts(){
+  const select=$("listAreaFilter");
+  if(!select) return;
+  const current=select.value||"all";
+  let source=DATA.filter(r=>Number(r["ĐUQ có PSSL"]||0)<=0);
+  if(notPsslClassFilter!=="all"){
+    source=source.filter(r=>String(r["Trạng thái ĐUQ"]||"").trim()===notPsslClassFilter);
+  }
+  const counts={};
+  source.forEach(r=>{
+    const area=String(r["Đơn vị"]||"").trim();
+    if(area) counts[area]=(counts[area]||0)+1;
+  });
+  const areas=["Tân Ninh","Long An","Tân Biên","Châu Thành","Bến Cầu","Tân Trụ","Dương Minh Châu","Thủ Thừa","Tân Châu","Đức Huệ","Cần Đước","Hòa Thành","Cần Giuộc","Tầm Vu","Kiến Tường","Đức Hòa","Tân Thạnh","Bến Lức","Thạnh Hóa","Gò Dầu","Vĩnh Hưng","Trảng Bàng"];
+  select.innerHTML=`<option value="all">Tất cả 22 khu vực (${source.length})</option>`+
+    areas.map(area=>`<option value="${area}">${area} (${counts[area]||0})</option>`).join("");
+  select.value=(current==="all"||areas.includes(current))?current:"all";
+}
+
 function render(){
   $("notpsslClassMenu").classList.toggle("is-hidden",mode!=="notpssl");
+  if(mode==="notpssl") updateListAreaFilterCounts();
   const list=getList(),sumSubs=list.reduce((s,r)=>s+Number(r["Số lượng Thuê bao PTM"]||0),0),sumRev=list.reduce((s,r)=>s+Number(r["Doanh thu bán hàng"]||0),0);
   if(mode==="notpssl"){
     const labelMap={
