@@ -47,3 +47,14 @@ Top 3 của từng nhóm lấy đúng từ sheet `TH` theo thứ tự:
 ## Cập nhật GitHub Pages
 
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
+
+- Đổi bộ lọc **Xem nhanh theo chỉ tiêu** từ droplist một lựa chọn sang danh sách có ô tick.
+- Có thể chọn đồng thời nhiều chỉ tiêu, ví dụ:
+  - ĐUQ có PSSL
+  - ĐUQ chưa PSSL
+  - Tổng thuê bao
+  - Tổng doanh thu
+- Bảng chỉ hiển thị các cột đã chọn cùng với Xếp hạng, Địa bàn và Tổng ĐUQ.
+- Chỉ hiển thị địa bàn có ít nhất một chỉ tiêu đã chọn lớn hơn 0.
+- Thứ tự xếp hạng ưu tiên theo chỉ tiêu được tick trước.
+- Bấm **Đặt lại bộ lọc** để trở về toàn bộ chỉ tiêu.
