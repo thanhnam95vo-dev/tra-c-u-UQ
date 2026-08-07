@@ -44,3 +44,10 @@ Dữ liệu cập nhật từ **0h ngày 01/08/2026 đến 16h30 ngày 07/08/202
 
 ## Cập nhật GitHub
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
+
+
+## Sửa lỗi tra cứu
+- Khôi phục danh sách trường tìm kiếm `FIELDS` bị thiếu trong JavaScript.
+- Thanh tìm kiếm chung có thể tìm theo: Tên ĐUQ, ID điểm bán, HRM điểm bán, Đơn vị, Nhân viên hỗ trợ, SĐT nhân viên hỗ trợ, Bảng thi đấu và Trạng thái ĐUQ.
+- Khi bấm menu **Tra cứu ĐUQ**, danh sách toàn bộ ĐUQ được hiển thị lại bình thường; nhập từ khóa sẽ lọc tức thời.
+- Giữ nguyên dữ liệu cập nhật đến **16h30 ngày 07/08/2026** và toàn bộ chức năng khác.
