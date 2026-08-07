@@ -614,7 +614,7 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 .tribute-rules div{background:linear-gradient(135deg,#fff,#f2f8fd);border:1px solid var(--line);border-radius:16px;padding:14px}.tribute-rules b,.tribute-rules span{display:block}.tribute-rules span{color:var(--p);font-size:19px;font-weight:900;margin-top:6px}
 .tribute-note{background:#fff6df;border:1px solid #efd18a;border-radius:14px;padding:12px;margin-bottom:10px;color:#70500a;font-size:13px}
 .tribute-summary div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.tribute-summary small{display:block;color:var(--muted);font-weight:800}.tribute-summary b{display:block;color:var(--p);font-size:24px;margin-top:4px}
-.tribute-list{display:grid;gap:8px}.tribute-row{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}
+.tribute-list{display:grid;gap:8px}.tribute-row{display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.tribute-row:not(.tribute-empty){cursor:pointer;transition:.18s}.tribute-row:not(.tribute-empty):hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#9ecce8}.tribute-row:not(.tribute-empty):active{transform:scale(.995)}
 .tribute-rank{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;background:#e7f3fb;color:var(--p)}.tribute-main strong,.tribute-main small,.tribute-main em{display:block}.tribute-main small{color:var(--muted);font-size:12px;margin-top:4px}.tribute-main em{font-style:normal;color:var(--good);font-size:11px;font-weight:800;margin-top:4px}
 .tribute-prize{text-align:right}.tribute-prize b,.tribute-prize span{display:block}.tribute-prize span{color:var(--good);font-weight:900;margin-top:4px}.tribute-empty{opacity:.7;border-style:dashed}.tribute-empty .tribute-main em{color:var(--warn)}
 @media(max-width:650px){.tribute-rules,.tribute-summary{grid-template-columns:1fr}.tribute-row{grid-template-columns:38px 1fr}.tribute-prize{grid-column:2;text-align:left}}
@@ -1331,6 +1331,67 @@ function openDetail(r,showOrders=false,show70Orders=false){
     },120);
   }
 }
+
+
+function normalizeTributeName(value){
+  return String(value||"").replace(/\s+/g," ").trim().toLocaleUpperCase("vi-VN");
+}
+
+function openTributeDetail(r){
+  if(!r) return;
+  const pointId=String(r["ID điểm bán"]||"");
+  const dayOrders=(ORDER_DETAILS[pointId]||[])
+    .filter(o=>String(o.successDate||"").startsWith("2026-08-07"))
+    .sort((a,b)=>String(b.successDate||"").localeCompare(String(a.successDate||"")));
+  const totalRevenue=dayOrders.reduce((sum,o)=>sum+Number(o.revenue||0),0);
+  const phoneCount=dayOrders.length;
+
+  $("modalTitle").textContent=r["Tên ĐUQ"];
+  $("modalSub").textContent=`Chi tiết bán hàng ngày 07/08/2026 · ${r["Đơn vị"]}`;
+  $("sheetBody").innerHTML=`
+    <div class="hero-card">
+      <div class="avatar">🎁</div>
+      <div><h3>${esc(r["Tên ĐUQ"])}</h3><p>${esc(r["Đơn vị"])} · ${esc(r["ID điểm bán"])}</p></div>
+      <span class="status-badge status-on">Tri ân 07/8</span>
+    </div>
+    <section class="section">
+      <h3>Kết quả bán hàng ngày 07/08/2026</h3>
+      <div class="metrics">
+        <div class="metric"><small>Số thuê bao bán được</small><strong>${phoneCount}</strong></div>
+        <div class="metric"><small>Doanh thu ngày 07/8</small><strong>${new Intl.NumberFormat("vi-VN").format(totalRevenue)}đ</strong></div>
+        <div class="metric"><small>Địa bàn</small><strong style="font-size:14px">${esc(r["Đơn vị"])}</strong></div>
+        <div class="metric"><small>ID điểm bán</small><strong style="font-size:13px">${esc(pointId)}</strong></div>
+      </div>
+    </section>
+    <section class="section order-section">
+      <h3>SIM/thuê bao phát triển trong ngày 07/8</h3>
+      <p class="order-note">Chỉ hiển thị đơn hàng thành công ngày 07/08/2026, sắp xếp từ mới nhất đến cũ nhất.</p>
+      <div class="order-summary">
+        <div><small>Tổng số thuê bao</small><b>${phoneCount}</b></div>
+        <div><small>Tổng doanh thu</small><b>${new Intl.NumberFormat("vi-VN").format(totalRevenue)}đ</b></div>
+        <div><small>Ngày chương trình</small><b>07/08/2026</b></div>
+      </div>
+      <div class="order-list">${buildOrderRows(dayOrders)}</div>
+    </section>`;
+  $("modal").classList.add("show");
+}
+
+function bindTributeRows(){
+  document.querySelectorAll(".tribute-row:not(.tribute-empty)").forEach(row=>{
+    row.setAttribute("title","Bấm để xem SIM, số thuê bao và doanh thu ngày 07/8");
+    row.setAttribute("tabindex","0");
+    const open=()=>{
+      const nameEl=row.querySelector(".tribute-main strong");
+      const target=normalizeTributeName(nameEl?nameEl.textContent:"");
+      const r=DATA.find(x=>normalizeTributeName(x["Tên ĐUQ"])===target);
+      if(r) openTributeDetail(r);
+    };
+    row.onclick=open;
+    row.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}};
+  });
+}
+
+bindTributeRows();
 
 document.querySelectorAll("[data-classification]").forEach(el=>el.onclick=()=>openClassification(el.dataset.classification));
 document.querySelectorAll("[data-detail]").forEach(el=>el.onclick=()=>{

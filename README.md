@@ -57,3 +57,10 @@ Dữ liệu cập nhật từ **0h ngày 01/08/2026 đến 11h30 ngày 07/08/202
 
 ## Cập nhật GitHub
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
+
+## Chi tiết giải Tri ân 07/8
+- Trong menu **Tri ân 07/8**, các dòng ĐUQ đang có thứ hạng/nhận giải có thể bấm để xem chi tiết.
+- Popup chỉ lấy các đơn hàng **Thành công ngày 07/08/2026** của đúng ĐUQ.
+- Chi tiết hiển thị: **số thuê bao/SIM, thời gian đăng ký thành công, doanh thu từng SIM, tổng số thuê bao và tổng doanh thu ngày 07/8**.
+- Danh sách được sắp xếp theo thời gian đăng ký thành công mới nhất đến cũ nhất.
+- Các vị trí giải còn trống không mở popup chi tiết.
