@@ -1,30 +1,28 @@
 # Chương trình đồng hành cùng Điểm ủy quyền
 
-**Bản bàn giao đã xác nhận: 259 ĐUQ (27 Pro, 30 Plus, 202 Basic).**
-
-Dữ liệu cập nhật từ 0h ngày 01/08/2026 đến 17h ngày 11/08/2026.
+Dữ liệu cập nhật từ 0h ngày 01/08/2026 đến 22h ngày 11/08/2026.
 
 ## Tổng quan đã đối chiếu
 - Tổng ĐUQ: **259**
 - Nhóm Pro: **27**
 - Nhóm Plus: **30**
 - Nhóm Basic: **202**
-- Tổng thuê bao PTM: **575**
-- Thuê bao PTM từ 70k: **285**
-- Tổng doanh thu: **47.742.000 đồng**
-- ĐUQ có PSSL: **156**
-- ĐUQ chưa PSSL: **103**
-- ĐUQ PSSL gói từ 70k: **86**
+- Tổng thuê bao PTM: **606**
+- Thuê bao PTM từ 70k: **301**
+- Tổng doanh thu: **50.907.000 đồng**
+- ĐUQ có PSSL: **159**
+- ĐUQ chưa PSSL: **100**
+- ĐUQ PSSL gói từ 70k: **88**
 
 ## Phân loại ĐUQ chưa PSSL
-- ĐUQ trước năm 2026: **37**
+- ĐUQ trước năm 2026: **34**
 - ĐUQ trong năm 2026: **14**
 - ĐUQ mới: **52**
 
 ## Nguồn và mốc chốt
 - Danh mục ĐUQ lấy từ sheet **TH**.
 - Đơn hàng lấy từ sheet **Đơn hàng**.
-- Chỉ lấy đơn hàng **Thành công**, có thời gian đăng ký thành công từ **0h 01/08/2026 đến 17:00:09 ngày 11/08/2026**.
+- Chỉ lấy đơn hàng **Thành công**, có thời gian đăng ký thành công từ **0h 01/08/2026 đến 22:10:08 ngày 11/08/2026**.
 - Thuê bao được khử trùng theo cờ chốt tại cột **BB**; gói từ 70k theo cột **BC**; doanh thu theo cột **BA**.
 - Riêng Hùng Phát ngày 11/08 đã đối soát nghiệp vụ: **2 thuê bao, doanh thu 1.590.000 đồng**.
 
