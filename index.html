@@ -41,7 +41,7 @@ main{max-width:1180px;margin:-12px auto 40px;padding:0 11px}.search{display:flex
 .metric-option input{width:17px;height:17px;accent-color:var(--p);flex:none}
 .metric-all{font-weight:900;color:var(--p);border-bottom:1px solid var(--line);margin-bottom:4px;padding-bottom:10px}
 .metric-selected-count{display:inline-block;background:#e7f3fb;color:var(--p);font-weight:900;border-radius:999px;padding:2px 7px;margin-left:5px;font-size:11px}
-.filter-field label{font-size:13px;font-weight:900;color:var(--p)}.filter-field select{padding:11px 12px;font-size:14px;background:#fff}.reset-filter{border:0;border-radius:12px;padding:12px 14px;background:#e8f3fb;color:var(--p);font-weight:900;white-space:nowrap}.area-table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px}
+.filter-field label{font-size:13px;font-weight:900;color:var(--p)}.filter-field select{padding:11px 12px;font-size:14px;background:#fff}.reset-filter{border:0;border-radius:12px;padding:12px 14px;background:#e8f3fb;color:var(--p);font-weight:900;white-space:nowrap}.area-table-wrap{overflow:visible;background:#fff;border:1px solid var(--line);border-radius:16px}
 
 .area-table-wrap .col-rank{width:52px;min-width:52px}
 .area-table-wrap .col-area{width:150px;min-width:150px}
@@ -61,7 +61,7 @@ main{max-width:1180px;margin:-12px auto 40px;padding:0 11px}.search{display:flex
 .area-filter-compact{grid-template-columns:1fr 1fr auto}
 @media(max-width:560px){.area-menu-tabs{display:grid;grid-template-columns:1fr 1fr}.area-menu-tab{padding:10px 6px;font-size:12px}.area-filter-compact{grid-template-columns:1fr}}
 .area-status{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px;font-size:13px;font-weight:800;color:var(--p)}
-.area-table-wrap{max-height:620px;overflow:auto;position:relative}
+.area-table-wrap{overflow:visible;position:relative}
 .area-table-wrap table{border-collapse:separate;border-spacing:0}
 .area-table-wrap thead th{position:sticky;top:0;z-index:12;background:#eaf4fb}
 .area-table-wrap thead th:nth-child(1),.area-table-wrap tbody td:nth-child(1),.area-table-wrap tfoot td:nth-child(1){position:sticky;left:0;z-index:10}
@@ -403,7 +403,7 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 /* FINAL STICKY LOCK: cố định tuyệt đối XH và Địa bàn */
 .area-table-wrap{
   position:relative!important;
-  overflow:auto!important;
+  overflow:visible!important;
   isolation:isolate!important;
 }
 
@@ -533,8 +533,8 @@ footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 /* FIX CỨNG CỘT ĐỊA BÀN TRONG BẢNG 22 KHU VỰC */
 .area-table-wrap{
   position:relative!important;
-  overflow-x:auto!important;
-  overflow-y:auto!important;
+  overflow-x:visible!important;
+  overflow-y:visible!important;
   isolation:isolate!important;
 }
 
