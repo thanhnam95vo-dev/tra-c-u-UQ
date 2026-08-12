@@ -70,7 +70,7 @@ main{max-width:1180px;margin:-12px auto 40px;padding:0 11px}.search{display:flex
 .area-table-wrap tbody td:nth-child(1),.area-table-wrap tbody td:nth-child(2){background:inherit}
 .area-table-wrap tfoot td{position:sticky;bottom:0;z-index:13;background:#005baa!important;color:#fff!important;font-weight:900;border-top:2px solid #004b8d;white-space:nowrap}
 .area-table-wrap tfoot td:nth-child(1),.area-table-wrap tfoot td:nth-child(2){z-index:16;background:#005baa!important}
-table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8px;border-bottom:1px solid #edf1f5;text-align:center;font-size:12px}th{background:#eaf4fb;color:#075faa;position:sticky;top:0;z-index:2}td.area-name{text-align:left;font-weight:800;white-space:nowrap}tr:hover td{background:#f7fbfe}.click-cell{cursor:pointer;font-weight:800;color:var(--p)}.area-subs{color:#0b8b4d;font-weight:900}.area-revenue{color:#b66b05;font-weight:900;white-space:nowrap}.heat-good{background:#e8f8ef!important}.heat-mid{background:#fff6df!important}.heat-low{background:#ffeaea!important}
+table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8px;border:1px solid #000;text-align:center;font-size:12px}th{background:#eaf4fb;color:#075faa;position:sticky;top:0;z-index:2}td.area-name{text-align:left;font-weight:800;white-space:nowrap}tr:hover td{background:#f7fbfe}.click-cell{cursor:pointer;font-weight:800;color:var(--p)}.area-subs{color:#0b8b4d;font-weight:900}.area-revenue{color:#b66b05;font-weight:900;white-space:nowrap}.heat-good{background:#e8f8ef!important}.heat-mid{background:#fff6df!important}.heat-low{background:#ffeaea!important}
 .area-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}.area-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.area-card small{color:var(--muted);font-weight:800}.area-card b{display:block;font-size:22px;color:var(--p);margin-top:5px}
 .modal{display:none;position:fixed;inset:0;background:rgba(8,23,40,.64);z-index:60;align-items:flex-end;justify-content:center;backdrop-filter:blur(5px)}.modal.show{display:flex}.sheet{width:100%;max-width:860px;max-height:94vh;background:#f3f7fb;border-radius:26px 26px 0 0;overflow:hidden;box-shadow:0 -20px 60px rgba(0,0,0,.22)}.sheet-top{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:20px;display:flex;justify-content:space-between;gap:12px}.sheet-top h2{margin:0;font-size:19px}.sheet-top p{margin:6px 0 0;font-size:12px;opacity:.9}.close{width:40px;height:40px;border-radius:50%;font-size:23px;background:rgba(255,255,255,.18);color:#fff}.sheet-body{padding:14px;overflow:auto;max-height:calc(94vh - 90px)}.hero-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px;display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center}.avatar{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#e8f5ff,#cfeaff);display:grid;place-items:center;font-size:27px}.status-badge{padding:7px 10px;border-radius:999px;font-size:11px;font-weight:900}.status-on{background:#e6f8ed;color:#087740}.status-off{background:#ffe8e8;color:#a62f2f}.section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px}.section h3{color:var(--p);font-size:14px;margin:0 0 9px}.info{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.info div{background:#f7fafc;border-radius:11px;padding:10px}.info small{display:block;color:var(--muted);font-weight:800}.info b{display:block;margin-top:5px;word-break:break-word}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.metric{background:linear-gradient(135deg,#eef8ff,#fff);border-radius:13px;padding:12px}.metric strong{display:block;color:var(--p);font-size:18px;margin-top:5px}
 
@@ -117,8 +117,7 @@ table{width:100%;border-collapse:collapse;min-width:1200px}th,td{padding:10px 8p
 .list-area-filter{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:10px}
 #listAreaFilter option{font-size:14px}.list-area-filter select{font-weight:700}.list-area-filter label{font-size:13px;font-weight:900;color:var(--p)}
 .list-area-filter select{padding:11px 12px;font-size:14px;background:#fff}
-.warning-cell{color:#c93232!important;font-weight:900;background:#fff1f1!important}
-.warning-cell:hover{background:#ffe2e2!important}
+.warning-cell{color:#c93232!important;font-weight:900}
 @media(max-width:560px){.list-area-filter{grid-template-columns:1fr;gap:6px}}
 footer{text-align:center;color:#7b8999;font-size:12px;margin-top:24px}
 @media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}.quick{grid-template-columns:repeat(3,1fr)}.area-cards{grid-template-columns:repeat(2,1fr)}}
@@ -1036,6 +1035,34 @@ function metricDisplay(metric,value){
   if(metric==="revenue") return new Intl.NumberFormat("vi-VN").format(value)+"đ";
   return new Intl.NumberFormat("vi-VN").format(value);
 }
+const HEAT_DIRECTION={
+  pssl:1,psslRate:1,notpssl:-1,notpssl_old:-1,notpssl_2026:-1,notpssl_new:-1,
+  subs:1,subs70:1,sim_under5:-1,sim5:1,sim10:1,sim20:1,sim30:1,
+  revenue:1,rev_under500:-1,rev500:1,rev1m:1,rev2m:1,rev3m:1
+};
+const HEAT_WHITE=[255,255,255,1],HEAT_GREEN=[14,165,92,1],HEAT_RED=[208,56,56,0.92];
+function mixRgb(c1,c2,k){
+  return c1.map((v,i)=>v+(c2[i]-v)*k);
+}
+function heatColor(t){
+  const k = t>=0.5 ? (t-0.5)*2 : (0.5-t)*2;
+  const [r,g,b,a] = t>=0.5 ? mixRgb(HEAT_WHITE,HEAT_GREEN,k) : mixRgb(HEAT_WHITE,HEAT_RED,k);
+  return `rgba(${Math.round(r)},${Math.round(g)},${Math.round(b)},${a.toFixed(2)})`;
+}
+function heatText(t){
+  return "#000";
+}
+function heatStyle(key,a,list){
+  const dir=HEAT_DIRECTION[key];
+  if(!dir||list.length<2) return "";
+  const vals=list.map(x=>metricValue(x,key));
+  const min=Math.min(...vals),max=Math.max(...vals);
+  if(max===min) return "";
+  const value=metricValue(a,key);
+  let t=(value-min)/(max-min);
+  if(dir<0) t=1-t;
+  return ` style="background:${heatColor(t)};color:${heatText(t)}"`;
+}
 function areaTotals(list){
   const keys=["total","pssl","pssl70","notpssl_old","notpssl_2026","notpssl_new","subs","subs70","sim_under5","sim5","sim10","sim20","sim30","revenue","rev_under500","rev500","rev1m","rev2m","rev3m"];
   const t={};
@@ -1050,8 +1077,8 @@ function openAggregateMetric(metric,label,areas){
   $("groupSearch").value="";$("listTitle").textContent=`TỔNG · ${label}`;
   render();window.scrollTo({top:0,behavior:"smooth"});
 }
-function areaCell(a,key,label,value,css=""){
-  return `<td class="click-cell ${css}" data-area="${esc(a.area)}" data-key="${key}" data-label="${label}">${value}</td>`;
+function areaCell(a,key,label,value,css="",style=""){
+  return `<td class="click-cell ${css}"${style} data-area="${esc(a.area)}" data-key="${key}" data-label="${label}">${value}</td>`;
 }
 function totalCell(key,label,value){
   return `<td class="total-click" data-total-key="${key}" data-total-label="${label}">${value}</td>`;
@@ -1071,7 +1098,7 @@ function renderAreas(){
     list=list.filter(a=>metricValue(a,selectedIndicator)>0);
     list.sort((a,b)=>metricValue(b,selectedIndicator)-metricValue(a,selectedIndicator)||b.total-a.total||b.revenue-a.revenue);
   }else if(currentAreaTab==="overview"){
-    list.sort((a,b)=>(b.total-b.pssl)-(a.total-a.pssl)||b.pssl-a.pssl||b.total-a.total);
+    list.sort((a,b)=>b.pssl-a.pssl||b.total-a.total||(b.total-b.pssl)-(a.total-a.pssl));
   }else{
     list.sort((a,b)=>b.subs-a.subs||b.revenue-a.revenue);
   }
@@ -1093,15 +1120,16 @@ function renderAreas(){
 
     $("areaBody").innerHTML=list.map((a,i)=>{
       const rate=a.total>0?a.pssl/a.total*100:0;
-      const cls=rate>=70?"heat-good":rate>=40?"heat-mid":"heat-low";
-      return `<tr class="${cls}">
+      return `<tr>
         <td>${i+1}</td>
         <td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td>
         ${columns.map(([key,label])=>{
-          const display=key==="psslRate"?`<b>${rate.toFixed(1)}%</b>`:metricDisplay(key,metricValue(a,key));
-          const css=["notpssl","notpssl_old","notpssl_2026","notpssl_new"].includes(key)?"warning-cell":"";
+          const value=metricValue(a,key);
+          const display=key==="psslRate"?`<b>${rate.toFixed(1)}%</b>`:metricDisplay(key,value);
+          const css="";
           const clickKey=key==="psslRate"?"pssl":key;
-          return areaCell(a,clickKey,label.replace(/<br>/g," "),display,css);
+          const style=heatStyle(key,a,list);
+          return areaCell(a,clickKey,label.replace(/<br>/g," "),display,css,style);
         }).join("")}
       </tr>`;
     }).join("");
@@ -1139,7 +1167,9 @@ function renderAreas(){
       <td class="area-name click-cell" data-area="${esc(a.area)}" data-key="total" data-label="Toàn bộ ĐUQ">${esc(a.area)}</td>
       ${columns.map(([key,label])=>{
         const css=key==="subs"||key==="subs70"?"area-subs":key==="revenue"?"area-revenue":"";
-        return areaCell(a,key,label.replace(/&lt;/g,"<"),metricDisplay(key,metricValue(a,key)),css);
+        const value=metricValue(a,key);
+        const style=heatStyle(key,a,list);
+        return areaCell(a,key,label.replace(/&lt;/g,"<"),metricDisplay(key,value),css,style);
       }).join("")}
     </tr>`).join("");
 
