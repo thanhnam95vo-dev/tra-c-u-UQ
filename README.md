@@ -27,9 +27,6 @@ Dữ liệu cập nhật từ 0h ngày 01/08/2026 đến 8h ngày 12/08/2026.
 - Riêng Hùng Phát ngày 11/08 đã đối soát nghiệp vụ: **2 thuê bao, doanh thu 1.590.000 đồng**.
 
 ## Các lỗi đã sửa
-- Mục **Tra cứu ĐUQ** có droplist chọn Đơn vị; mỗi đơn vị hiển thị số ĐUQ hiện hữu, ví dụ `Cần Đước (15 ĐUQ)`.
-- Khi chọn Đơn vị, danh sách và năm chỉ tiêu **SL ĐUQ – ĐUQ PSSL – ĐUQ chưa PSSL – Thuê bao – Doanh thu** được tính lại theo đúng đơn vị đã chọn.
-- Nhãn phiên bản **“Bản cập nhật Tra cứu ĐUQ: 12/08/2026 · 5 chỉ tiêu theo đơn vị”** được hiển thị ngay trên cụm chỉ tiêu để dễ xác nhận đang mở đúng file mới.
 - Sắp xếp đúng theo thuê bao khi bấm biểu đồ thuê bao của từng nhóm.
 - Bộ lọc địa bàn hoạt động với danh sách phân loại ĐUQ và thuê bao từ 70k.
 - Danh sách khu vực không còn giữ số đếm sai từ menu ĐUQ chưa PSSL khi chuyển menu.
@@ -64,15 +61,3 @@ Dữ liệu cập nhật từ 0h ngày 01/08/2026 đến 8h ngày 12/08/2026.
 
 ## Cập nhật GitHub
 Upload đè `index.html` và `README.md`, sau đó chọn **Commit changes**.
-# Cập nhật bộ lọc nhiều lựa chọn
-
-- Mục **Theo dõi 22 địa bàn** cho phép chọn đồng thời nhiều chỉ tiêu.
-- Cho phép chọn đồng thời nhiều địa bàn để so sánh.
-- Có nút **Chọn tất cả**, **Bỏ chọn** và **Đặt lại bộ lọc**.
-- Bảng, dòng tổng và trạng thái tổng hợp tự cập nhật theo các lựa chọn.
-
-# Cập nhật hiển thị đủ 22 địa bàn
-
-- Mở rộng chiều cao bảng **Theo dõi 22 địa bàn** để hiển thị trọn 22 đơn vị và dòng **TỔNG (22 địa bàn)**.
-- Thanh cuộn ngang được đặt phía dưới dòng Tổng, không còn che địa bàn thứ 22.
-- Giữ nguyên chức năng chọn nhiều chỉ tiêu, chọn nhiều địa bàn và cố định cột Địa bàn khi kéo ngang.
