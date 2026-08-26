@@ -16,7 +16,7 @@ Dữ liệu được tổng hợp từ **0h ngày 01/08/2026 đến hết ngày 
 ## Nội dung hiển thị
 
 - Hai tab **Tổng quan** và **Theo dõi 22 địa bàn** tiếp tục được ẩn.
-- Tab **Tri ân 18/8** được giữ nguyên nội dung và kết quả.
+- Tab **Tri ân 25/8** hiển thị 10 ĐUQ đạt giải theo bảng kết quả chính thức.
 - Tab **Tra cứu ĐUQ** sử dụng dữ liệu chốt hết ngày 25/08/2026.
 - Số liệu hiển thị được tính lại từ các đơn hàng có trạng thái `Thành công` trong đúng khoảng thời gian chốt; thông tin Điểm ủy quyền lấy từ sheet `TH`.
 
@@ -25,3 +25,9 @@ Dữ liệu được tổng hợp từ **0h ngày 01/08/2026 đến hết ngày 
 Mở file `index.html` bằng Chrome, Edge hoặc Brave. File hoạt động độc lập, không cần kết nối Internet.
 
 Nguồn dữ liệu: `ĐUQ chốt(2).xlsx`.
+
+## Kết quả Tri ân 25/8
+
+- 10 Điểm ủy quyền đạt giải.
+- 52 thuê bao từ 70K.
+- Tổng tiền khuyến khích: **1.900.000 đồng**.
